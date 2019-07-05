@@ -1,0 +1,34 @@
+{% extends "_base.html" %}
+{% block content %}
+
+<br/>
+    <h3>Result of calculations:</h3>
+        <strong>Total pay:</strong> {{ t_pay }} <strong> rub.</strong><br/>
+        <strong>Total overpay:</strong> {{ t_overpay }}<strong> rub.</strong><br/>
+        <strong>Month pay:</strong> {{ pay_month }}<strong> rub.</strong><br/>
+        <br/>
+        <table>
+            <thead>
+            <tr>
+                <th> Calculations for every month:</th>
+            </tr>
+            <tr>
+                <th scope="col"> Month:</th>
+                <th scope="col"> Total debt after pay: </th>
+                <th scope="col"> Pay for rent:</th>
+                <th scope="col"> Pay for total debt:</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for d in table %}
+            <tr>
+                <td> {{ d[0] }} </td>
+                <td> {{d[1]}} </td>
+                <td> {{d[2]}} </td>
+                <td> {{d[3] }}  </td>
+            <tr/>
+            {% endfor %}
+            </tbody>
+        </table>
+
+{% endblock %}

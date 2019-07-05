@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+{% block content %}
+
+<h2>Welcome to the Real Ipoteca!</h2>
+    <form action="{{ url_for('calculate') }}" method="post">
+        <div>
+            <label>Total credit:</label>
+            <input name="total_credit" type="text">
+        </div>
+        <div>
+            <label>Total term of credit:</label>
+            <input name="total_term" type="text">
+        </div>
+        <div>
+            <label>Interest rate:</label>
+            <input name="interest_rate" type="text">
+        </div>
+        <div>
+            <input class="button" type="submit" value="Save">
+        </div>
+    </form>
+
+
+{% endblock %}
